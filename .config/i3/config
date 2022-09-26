@@ -172,7 +172,6 @@ client.focused          #77dd77 #77dd77 #77dd77 #77dd77   #ff0000
 
 #Default WorkSpace
 assign [class="^discord$"] "10 : Comm"
-assign [class="^firefox$"] "2 : Web"
 
 #Startup Process
 #Background image

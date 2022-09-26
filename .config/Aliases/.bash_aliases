@@ -1,12 +1,8 @@
 # Alias pour permettre sudo [un_alias]
 alias sudo='sudo '
 
-# Aliases pour Xampp
-alias lampp='sudo /opt/lampp/lampp'
-alias ctlampp='sudo /opt/lampp/manager-linux-x64.run'
-alias servcopy='sudo sh /home/samuel/.config/Aliases/WebPage_to_LamppProject.sh'
-# Aliases pour proftp
-alias ftpasswd='/opt/lampp/bin/ftpasswd'
+# Aliases pour Serveur Apache
+alias apacheserv='sudo service apache2'
 
 # Aliases pour Intellij-Community
 alias intellij='screen intellij-idea-community'
@@ -34,5 +30,5 @@ alias pdf='screen evince'
 #Aliases pour LibreOffice
 alias lo='screen libreoffice'
 
-#Aliases pour Mode Avion
-alias wireless='nmcli r wifi '
+#Aliases pour les jeux
+alias darkestdungeon="sudo screen /root/GOG\ Games/Darkest\ Dungeon/game/darkest.bin.x86_64"
