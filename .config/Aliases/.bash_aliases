@@ -6,8 +6,17 @@ alias apacheserv='sudo service apache2'
 
 # Aliases pour Intellij-Community
 alias intellij='screen intellij-idea-community'
+alias intellijU='screen /app/JetBrains/idea-IU-222.4167.29/bin/idea.sh'
+# Aliases pour PHP Storm
+alias phpstorm='screen /app/JetBrains/PhpStorm-222.4167.33/bin/phpstorm.sh'
 #Aliases pour Visual Studio Code
 alias vscode='screen code'
+
+#Aliases pour SGBD
+alias sqldev="screen /app/SGBD/sqldeveloper/sqldeveloper.sh"
+
+#Aliases pour Obsidian
+alias obsidian="screen flatpak run md.obsidian.Obsidian"
 
 #Aliases pour Mozilla Firefox
 alias ffox='screen firefox'
