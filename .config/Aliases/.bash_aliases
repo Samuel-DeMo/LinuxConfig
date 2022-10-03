@@ -32,12 +32,11 @@ alias ytbmusic='screen firefox https://music.youtube.com/'
 alias wheut='screen firefox https://matias.ma/nsfw/'
 
 #Aliases pour lecteur audio / vidéo
-alias lire='screen vlc'
+alias vlc='screen vlc'
+#Aliases pour lecteur image
+alias eye='screen eog'
 #Aliases pour Lecteur pdf
-alias pdf='screen evince'
+alias evince='screen evince'
 
 #Aliases pour LibreOffice
 alias lo='screen libreoffice'
-
-#Aliases pour les jeux
-alias darkestdungeon="sudo screen /root/GOG\ Games/Darkest\ Dungeon/game/darkest.bin.x86_64"
