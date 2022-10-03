@@ -52,6 +52,7 @@ Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
 Plug 'https://github.com/morhetz/gruvbox'
 Plug 'https://github.com/ThePrimeagen/refactoring.nvim'
 Plug 'https://github.com/github/copilot.vim'
+Plug 'vim-airline/vim-airline-themes'
 
 call plug#end()
 
@@ -116,6 +117,7 @@ nnoremap <leader>b :Telescope buffers<CR>
 
 " To navigate trought quickfix list
 nnoremap <C-c> :cn<CR>
+nnoremap <C-f> :cp<CR>
 
 " To navigate throught buffers
 nnoremap <leader>h :bp<CR>
@@ -124,7 +126,6 @@ nnoremap <leader>x :bd<CR>
 nnoremap <leader>l :bn<CR>
 nnoremap <leader>L :tabnext<CR>
 
-nnoremap <C-f> :cp<CR>
 " To deplace line in visual / insert / normal mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -224,3 +225,8 @@ vnoremap <Up> <Nop>
 
 " Disable Ex mode
 nnoremap Q <Nop>
+
+Info :
+Run "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
+Run "sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
+
