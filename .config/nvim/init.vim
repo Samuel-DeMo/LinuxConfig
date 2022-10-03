@@ -16,10 +16,6 @@ filetype plugin on " Enable plugin on file type
 :set incsearch " when u '/' = search for something it inc letter by letter
 :set cursorline " Show cursor line to be aware of where is the cursor
 :set nohlsearch  " Disable highlight when finish searching
-" :set list
-" " To add symbol at every end of line
-" :let &listchars = 'tab:  ,eol:¬'
-" :set fillchars=vert:│
 autocmd BufWritePre * %s/\s\+$//e " Disable trailling space when saving
 set autowrite " auto write when leave a buffer
 
@@ -45,19 +41,17 @@ Plug 'othree/yajs.vim' " Color and auto complete react...
 Plug 'nvim-lua/plenary.nvim' " For making telescope and harpoon working
 Plug 'nvim-telescope/telescope.nvim' " Fuzzy finder eke file finder really fast
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}   " To make telescope and live grep work
+Plug 'nvim-lua/plenary.nvim' " make refactoring work
 Plug 'https://github.com/szw/vim-maximizer' " To maximize a windows with one shortcut
 Plug 'tpope/vim-fugitive' " Git update in neovim
 Plug 'https://github.com/nanotech/jellybeans.vim' " The best colorscheme ever !
 Plug 'https://github.com/tpope/vim-commentary' " Easy commentting / gc to comment in visual
 Plug 'puremourning/vimspector' " Debugger for vim in multiple language
+Plug 'https://github.com/ludovicchabant/vim-gutentags' " Automatically update tags files
 Plug 'kyazdani42/nvim-web-devicons' " Icons for Telescope
-Plug 'https://github.com/morhetz/gruvbox' " BEST COLOR
-Plug 'vim-airline/vim-airline-themes'
-
-" Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-" Plug 'ThePrimeagen/harpoon' " To have a better view of tabs and save file to temp
-" Plug 'https://github.com/ThePrimeagen/vim-be-good' " To be better at vim
-" Plug 'christoomey/vim-tmux-navigator' " Make tmux and vim together just full of love betwen them
+Plug 'https://github.com/morhetz/gruvbox'
+Plug 'https://github.com/ThePrimeagen/refactoring.nvim'
+Plug 'https://github.com/github/copilot.vim'
 
 call plug#end()
 
@@ -71,7 +65,8 @@ nnoremap <leader>ma :make<cr><cr>
 
 " For style / color / status bar / background / Nerd tree beauty
 :colorscheme gruvbox  " The best colorscheme ever and make main color = white
-let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
+highlight Normal ctermbg=NONE
+" let g:gruvbox_contrast_dark = 'hard' " Make gruvbox really dark mode
 let g:airline_theme='base16_gruvbox_dark_hard' " Make status bar and buffer bar in theme with gruvbox
 let g:NERDTreeDirArrowExpandable="" " When file not open in nerd tree show this icon
 let g:NERDTreeDirArrowCollapsible="" " When file open in nerd tree show this icon
@@ -121,7 +116,6 @@ nnoremap <leader>b :Telescope buffers<CR>
 
 " To navigate trought quickfix list
 nnoremap <C-c> :cn<CR>
-nnoremap <C-f> :cp<CR>
 
 " To navigate throught buffers
 nnoremap <leader>h :bp<CR>
@@ -130,6 +124,7 @@ nnoremap <leader>x :bd<CR>
 nnoremap <leader>l :bn<CR>
 nnoremap <leader>L :tabnext<CR>
 
+nnoremap <C-f> :cp<CR>
 " To deplace line in visual / insert / normal mode
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
@@ -178,11 +173,11 @@ noremap <silent> <leader>se :call Unmouse()<CR>
 " space z to toggle quickfix window
 nnoremap <leader>z :call asyncrun#quickfix_toggle(6)<cr>
 " Compile in c
-noremap <silent> <leader>c :AsyncRun gcc -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" <cr>
+noremap <silent> <leader>c :AsyncRun gcc -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -fsanitize=address <cr>
 " Compile in c without warning
-noremap <silent> <leader>wc :AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm  <cr>
+noremap <silent> <leader>wc :AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm -fsanitize=address <cr>
 " Compile in c++
-noremap <silent> <leader>C :AsyncRun g++ -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  <cr>
+noremap <silent> <leader>C :AsyncRun g++ -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address<cr>
 " Compile in c++ without warning
 noremap <silent> <leader>wC :AsyncRun g++ -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  <cr>
 " Compile in c#

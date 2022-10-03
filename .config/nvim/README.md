@@ -52,12 +52,3 @@
 
 ## Git
 - Git // **space+gs** to go status
-# nvim
-# nvim
-
-Info :
-Run "curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim"
-Run "sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'"
-
