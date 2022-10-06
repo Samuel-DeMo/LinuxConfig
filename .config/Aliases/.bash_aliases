@@ -36,7 +36,7 @@ alias vlc='screen vlc'
 #Aliases pour lecteur image
 alias eye='screen eog'
 #Aliases pour Lecteur pdf
-alias evince='screen evince'
+alias pdf='screen evince'
 
 #Aliases pour LibreOffice
 alias lo='screen libreoffice'
