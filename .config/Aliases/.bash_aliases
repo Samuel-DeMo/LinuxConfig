@@ -37,6 +37,8 @@ alias vlc='screen vlc'
 alias eye='screen eog'
 #Aliases pour Lecteur pdf
 alias pdf='screen evince'
+#Aliases pour flameshot
+alias fshot='screen flameshot'
 
 #Aliases pour LibreOffice
 alias lo='screen libreoffice'
