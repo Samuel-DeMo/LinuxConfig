@@ -1,1 +1,1 @@
-require("Nuxnuxx")
+require("config")
