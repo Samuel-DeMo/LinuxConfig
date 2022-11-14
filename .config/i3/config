@@ -177,6 +177,7 @@ assign [class="^discord$"] "10 : Comm"
 #Background image
 exec_always feh --bg-fill '/home/samuel/Pictures/WP/Linux_Kernel_Heart.jpeg'
 #Discord Startup launch
+exec --no-startup-id i3-msg 'workspace "10 : Comm"; exec flameshot'
 exec --no-startup-id i3-msg 'workspace "10 : Comm"; exec discord'
 #ShiftLock & Echap swaped
 exec_always --no-startup-id "setxkbmap -option caps:swapescape"
