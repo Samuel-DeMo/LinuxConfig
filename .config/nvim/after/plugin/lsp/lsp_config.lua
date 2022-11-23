@@ -4,13 +4,13 @@ local lspkind = require('lspkind')
 local luasnip = require('luasnip')
 local nvim_lsp = require('lspconfig')
 
-local servers = { 'tsserver', 'clangd', 'html', 'intelephense', 'jdtls', 'sumneko_lua' ,'emmet_ls', 'jsonls', 'csharp_ls'}
+local servers = { 'tsserver', 'clangd', 'html', 'intelephense', 'jdtls', 'sumneko_lua', 'emmet_ls', 'jsonls', 'csharp_ls' }
 
 for _, lsp in ipairs(servers) do
-    nvim_lsp[lsp].setup {}
+	nvim_lsp[lsp].setup {}
 end
 
-local on_attach  = function(client, bufnr)
+local on_attach = function(client, bufnr)
 
 	-- Disable Autoformat
 	client.resolved_capabilities.document_formatting = false
@@ -33,17 +33,17 @@ cmp.setup {
 		format = lspkind.cmp_format()
 	},
 	mapping = {
-		--    ['<C-p>'] = cmp.mapping.select_prev_item(),
-		--    ['<C-n>'] = cmp.mapping.select_next_item(),
-		--    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-		--    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+		-- ['<S-Tab>'] = cmp.mapping.select_next_item(),
+		-- ['<C-Tab>'] = cmp.mapping.select_prev_item(),
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		--    ['<C-Space>'] = cmp.mapping.complete(),
 		--    ['<C-e>'] = cmp.mapping.close(),
 		['<Tab>'] = cmp.mapping.confirm {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		},
-		['<C-n>'] = function(fallback)
+		['<S-Tab>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -52,7 +52,7 @@ cmp.setup {
 				fallback()
 			end
 		end,
-		['<S-Tab>'] = function(fallback)
+		['<C-n>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
