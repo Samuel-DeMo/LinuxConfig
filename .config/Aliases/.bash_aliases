@@ -1,22 +1,28 @@
 # Alias pour permettre sudo [un_alias]
 alias sudo='sudo '
 
+# Alias pour nvim
+alias nvim='gnome-terminal -- nvim '
+
+# Alias pour raccourci Desktop
+alias d='cd /home/samuel/Desktop'
+
 # Aliases pour Serveur Apache
 alias apacheserv='sudo service apache2'
 
 # Aliases pour Intellij-Community
-alias intellij='gnome-terminal & screen intellij-idea-community '
-alias intellijU='gnome-terminal & screen /app/JetBrains/idea-IU-222.4167.29/bin/idea.sh '
+alias intellij='~/.config/i3/appCO.sh $$ intellij-idea-community'
+alias intellijU='~/.config/i3/appCO.sh $$ /app/JetBrains/idea-IU-222.4167.29/bin/idea.sh'
 # Aliases pour PHP Storm
-alias phpstorm='gnome-terminal & screen /app/JetBrains/PhpStorm-222.4167.33/bin/phpstorm.sh'
+alias phpstorm='~/.config/i3/appCO.sh $$ /app/JetBrains/PhpStorm-222.4167.33/bin/phpstorm.sh'
 #Aliases pour Visual Studio Code
-alias vscode='gnome-terminal & screen code'
+alias vscode='~/.config/i3/appCO.sh $$ code'
 
 #Aliases pour SGBD
-alias sqldev="gnome-terminal & screen /app/SGBD/sqldeveloper/sqldeveloper.sh"
+alias sqldev="~/.config/i3/appCO.sh $$ /app/SGBD/sqldeveloper/sqldeveloper.sh"
 
 #Aliases pour Mozilla Firefox
-alias ffox='gnome-terminal & screen firefox'
+alias ffox='~/.config/i3/appCO.sh $$ firefox'
 alias mail='ffox https://outlook.live.com/mail/0/'
 alias upjv='ffox https://www.u-picardie.fr/ent/dashboard'
 alias webmail='ffox https://webmail.etud.u-picardie.fr/imp/dynamic.php\?page\=mailbox'
@@ -29,21 +35,21 @@ alias ytbmusic='ffox https://music.youtube.com/'
 alias wheut='ffox https://matias.ma/nsfw/'
 
 #Aliases pour lecteur audio / vidéo
-alias vlc='screen vlc '
+alias vlc='~/.config/i3/appCO.sh $$ vlc'
 #Aliases pour lecteur image
-alias eye='gnome-terminal & screen eog '
+alias eye='~/.config/i3/appCO.sh $$ eog'
 #Aliases pour Lecteur pdf
-alias pdf='gnome-terminal & screen evince '
+alias pdf='~/.config/i3/appCO.sh $$ evince'
 #Aliases pour flameshot
-alias fshot='gnome-terminal & screen flameshot'
+alias fshot='flameshot'
 
 #Aliases pour LibreOffice
-alias lo='gnome-terminal & screen libreoffice '
+alias lo='~/.config/i3/appCO.sh $$ libreoffice'
 
 #Aliases pour logiciel Windows
-alias exe='gnome-terminal & screen wine '
+alias exe='~/.config/i3/appCO.sh $$ wine'
 #Aliases pour Looping
-alias looping='cd /app/Looping & exe ./looping.exe'
+alias looping='~/.config/i3/appCO.sh $$ exe /app/Looping/Looping.exe'
 
 #Aliases disk
 alias mount_DD='sudo mount -o rw,uid=1000,gid=1000,user,exec,umask=003 /dev/sda1 /home/samuel/DD-SAM-1T'
