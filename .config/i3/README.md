@@ -19,4 +19,4 @@ Infos :
      1. In /etc/pulse/default.pa change "load-module module-suspend-on-idle" to "#load-module module-suspend-on-idle"
      2. Run "$killall pulseaudio"
 - If backlight change doesn't work :
-     -> Move "xorg.conf" to "/etc/X11"
+     -> Copy "xorg.conf" to "/etc/X11"

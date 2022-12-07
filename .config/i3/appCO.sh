@@ -1,12 +1,12 @@
 #!/bin/bash
 
-if [ $2 = "-c" ]
+if [ $2 -eq "-c" ]
 then
-	com=screen $3 $4
+	gnome-terminal -- kill -9 $1 &
+	com=$(screen $3 $4)
 else
-	com=screen $2 $3 &
-	gnome-terminal
+	gnome-terminal &
+	gnome-terminal -- kill -9 $1 &
+	com=$(screen $2 $3)
 fi
 
-# sleep 2
-# killcom=$(kill -9 $1)
