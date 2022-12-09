@@ -1,4 +1,4 @@
-local Remap = require("config.keymap")
+local Remap = require("Nuxnuxx.keymap")
 local nnoremap = Remap.nnoremap
 -- local vnoremap = Remap.vnoremap
 -- local inoremap = Remap.inoremap
@@ -11,6 +11,7 @@ nnoremap("<leader>d", ":Telescope diagnostics<CR>")
 nnoremap("<leader>f", ":Telescope live_grep<CR>")
 nnoremap("<leader>k", ":Telescope keymaps<CR>")
 nnoremap("<leader>v", ":Telescope treesitter<CR>")
+nnoremap("<leader>q", ":lua require'telescope.builtin'.diagnostics{}<CR>")
 
 nnoremap("<leader>we", ":lua require('harpoon.ui').toggle_quick_menu()<CR>")
 nnoremap("<leader>wa", ":lua require('harpoon.mark').add_file()<CR>")
@@ -21,7 +22,10 @@ nnoremap("<leader>w4", ":lua require('harpoon.ui').nav_file(4)<CR>")
 nnoremap("<leader>wh", ":lua require('harpoon.ui').nav_previous()<CR>")
 nnoremap("<leader>wl", ":lua require('harpoon.ui').nav_next()<CR>")
 
-nnoremap("<leader>g", ":Neogit<CR>");
+nnoremap("<leader>g", ":Neogit<CR>")
+nnoremap("<leader>eo", ":NvimTreeToggle<CR>")
+nnoremap("<leader>ef", ":NvimTreeFocus<CR>")
+nnoremap("<leader>er", ":NvimTreeFindFile<CR>")
 
-nnoremap ("<leader>t", ":ToggleTerm direction=horizontal size=10<CR>")
+nnoremap ("<leader>t", ":ToggleTerm direction=horizontal size=6<CR>")
 vim.api.nvim_set_keymap('t', '<leader>x', '<C-\\><C-n>:ToggleTerm<CR>', {noremap = true, silent = true})

@@ -1,5 +1,4 @@
 require'lspconfig'.sumneko_lua.setup {
-    -- ... other configs
     settings = {
         Lua = {
             diagnostics = {
@@ -31,5 +30,8 @@ require'lspconfig'.emmet_ls.setup {
 }
 
 require'lspconfig'.csharp_ls.setup {
+
+}
+require'lspconfig'.rust_analyzer.setup {
 
 }

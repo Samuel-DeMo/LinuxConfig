@@ -1,4 +1,4 @@
-local Remap = require("config.keymap")
+local Remap = require("Nuxnuxx.keymap")
 local nnoremap = Remap.nnoremap
 local vnoremap = Remap.vnoremap
 local inoremap = Remap.inoremap
@@ -19,16 +19,18 @@ nnoremap("<C-h>", ":winc h<CR>")
 nnoremap("<C-j>", ":winc j<CR>")
 nnoremap("<C-k>", ":winc k<CR>")
 nnoremap("<C-l>", ":winc l<CR>")
-nnoremap("<C-e>", ":Explore<CR>")
 nnoremap("<leader>rc", ":e $MYVIMRC<CR>")
 nmap("H", "^")
 nmap("L", "$")
 
 -- Compilation
 nnoremap("<leader>z", ':call asyncrun#quickfix_toggle(6)<cr>')
-nnoremap("<leader>c", ':AsyncRun gcc -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -fsanitize=address <cr>')
-nnoremap("<leader>wc", ':AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm -fsanitize=address <cr>')
-nnoremap("leader>C", ':AsyncRun gcc g++ -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address<cr>')
+nnoremap("<leader>c",
+	':AsyncRun gcc -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -fsanitize=address <cr>')
+nnoremap("<leader>wc",
+	':AsyncRun gcc -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)" -lm -fsanitize=address <cr>')
+nnoremap("leader>C",
+	':AsyncRun gcc g++ -g -Wall -O2 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  -fsanitize=address<cr>')
 nnoremap("<leader>wC", ' :AsyncRun g++ -g -O0 "$(VIM_FILEPATH)" -o "$(VIM_FILEDIR)/$(VIM_FILENOEXT)"  <cr>')
 nnoremap("<leader>#", ':AsyncRun mcs -out:$(VIM_FILEDIR)/$(VIM_FILENOEXT) $(VIM_FILEPATH)<cr>')
 nnoremap("<leader>j", ':AsyncRun java $(VIM_FILEPATH)<cr>')
@@ -55,7 +57,6 @@ nnoremap("<leader>rn", ":lua vim.lsp.buf.rename()<CR>")
 nnoremap("gr", ":lua vim.lsp.buf.references()<CR>")
 nnoremap("[d", ":lua vim.lsp.diagnostic.goto_prev()<CR>")
 nnoremap("]D", ":lua vim.lsp.diagnostic.goto_next()<CR>")
-nnoremap("<leader>q", ":lua vim.diagnostic.set_loclist()<CR>")
 nnoremap("<leader>m", ":lua vim.lsp.buf.formatting()<CR>")
 
 -- Disable arrow keys

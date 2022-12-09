@@ -7,6 +7,8 @@ sudo apt install git
 cd ~
 echo "Enter Github address mail : "
 read GitMail
+echo "Enter Github name : "
+read GitName
 
 echo "Press only Enter"
 ssh-keygen -t ed25519 -C "$GitMail"
@@ -18,7 +20,8 @@ echo "Go to Github -> Settings -> SSH and GPG keys
 sudo cat ~/.ssh/id_ed25519.pub
 read nothing
 
-sudo apt install vim neovim lua5.4 packer zsh flameshot libreoffice vlc curl apache2 python2 python3-neovim pulseaudio xbacklight gcc openjdk-18-jdk mysql-server mysql-client mysql-common nodejs screen
+sudo apt install vim lua5.4 packer zsh flameshot libreoffice vlc curl apache2 python2 python3-neovim python3.10-venv pulseaudio xbacklight gcc g++ openjdk-18-jdk mysql-server mysql-client mysql-common nodejs screen npm
+sudo snap install nvim --classic
 
 #Dotnet
 wget https://packages.microsoft.com/config/ubuntu/22.04/packages-microsoft-prod.deb
@@ -59,6 +62,8 @@ sudo chmod 755 /etc/X11/xorg.conf.d/90-touchpad.conf
 
 sudo apt autoremove
 
+git config --global user.mail "$GitMail"
+git config --global user.name "$GitName"
 cd ~
 git clone git@github.com:SamDWRay/LinuxConfig.git
 mv -t ~/.config ~/LinuxConfig/.config/*

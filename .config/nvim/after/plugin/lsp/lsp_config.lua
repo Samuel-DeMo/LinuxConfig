@@ -19,7 +19,7 @@ end
 
 -- nvim-cmp almost supports LSP's capabilities so You should advertise it to LSP servers..
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
+capabilities = cmp_nvim_lsp.default_capabilities(capabilities)
 
 --
 -- Nvim-cmp
@@ -33,17 +33,17 @@ cmp.setup {
 		format = lspkind.cmp_format()
 	},
 	mapping = {
-		-- ['<S-Tab>'] = cmp.mapping.select_next_item(),
-		-- ['<C-Tab>'] = cmp.mapping.select_prev_item(),
+		['<C-p>'] = cmp.mapping.select_prev_item(),
+		-- ['<C-n>'] = cmp.mapping.select_next_item(),
 		['<C-d>'] = cmp.mapping.scroll_docs(-4),
 		['<C-f>'] = cmp.mapping.scroll_docs(4),
 		--    ['<C-Space>'] = cmp.mapping.complete(),
 		--    ['<C-e>'] = cmp.mapping.close(),
-		['<Tab>'] = cmp.mapping.confirm {
+		['<Enter>'] = cmp.mapping.confirm {
 			behavior = cmp.ConfirmBehavior.Replace,
 			select = true,
 		},
-		['<S-Tab>'] = function(fallback)
+		['<Tab>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_next_item()
 			elseif luasnip.expand_or_jumpable() then
@@ -52,7 +52,7 @@ cmp.setup {
 				fallback()
 			end
 		end,
-		['<C-n>'] = function(fallback)
+		['<S-Tab>'] = function(fallback)
 			if cmp.visible() then
 				cmp.select_prev_item()
 			elseif luasnip.jumpable(-1) then
@@ -68,8 +68,8 @@ cmp.setup {
 		end
 	},
 	sources = {
-		{ name = 'nvim_lsp' },
 		{ name = 'luasnip' },
+		{ name = 'nvim_lsp' },
 		{ name = 'copilot' },
 		{ name = 'path' }
 	},
