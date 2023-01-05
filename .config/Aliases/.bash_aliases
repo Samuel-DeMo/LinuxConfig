@@ -58,8 +58,8 @@ alias looping='exe /app/Looping/Looping.exe'
 alias loopingC='exeC /app/Looping/Looping.exe'
 
 # Alias disk
-alias mount_HD='sudo mount -o rw,uid=1000,gid=1000,user,exec,umask=003 /dev/sda1 /home/samuel/DD-SAM-1T'
-alias umount_HD='sudo umount /dev/sda1'
+alias mount_USB='sudo mount -o rw,uid=1000,gid=1000,user,exec,umask=003 /dev/sda1 /home/samuel/DD-SAM-1T'
+alias umount_USB='sudo umount /dev/sda1'
 
 # Alias perso
 alias project='cd ~/Desktop/MonoGame_Project0/ ; vscode ~/Desktop/MonoGame_Project0/'

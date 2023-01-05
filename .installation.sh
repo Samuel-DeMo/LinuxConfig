@@ -20,7 +20,7 @@ echo "Go to Github -> Settings -> SSH and GPG keys
 sudo cat ~/.ssh/id_ed25519.pub
 read nothing
 
-sudo apt install vim lua5.4 packer zsh flameshot libreoffice vlc curl apache2 python2 python3-neovim python3.10-venv pulseaudio xbacklight gcc g++ openjdk-18-jdk mysql-server mysql-client mysql-common nodejs screen npm
+sudo apt install vim lua5.4 packer zsh flameshot libreoffice vlc curl apache2 python2 python3-neovim python3.10-venv pulseaudio xbacklight gcc g++ openjdk-18-jdk mysql-server mysql-client mysql-common nodejs screen npm mono-mcs
 sudo snap install nvim --classic
 
 #Dotnet
@@ -58,7 +58,6 @@ sudo echo 'Section "InputClass"
         Option "Tapping" "on"
 EndSection' >> /etc/X11/xorg.conf.d/90-touchpad.conf
 sudo chmod 755 /etc/X11/xorg.conf.d/90-touchpad.conf
-
 
 sudo apt autoremove
 
